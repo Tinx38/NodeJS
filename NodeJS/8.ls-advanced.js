@@ -17,22 +17,23 @@ async function ls (folder) {
     const filePath = path.join(folder, file)
     let stats
 
+
     try {
-        stats = await fs.stats(filePath) // informacion del archivo 
+        stats = await fs.stat(filePath) // informacion del archivo 
     }   catch {
-        console.error(`no se pudo leer el archivo ${filePath}`)
+        console.error(`no se pudo leer el fichero ${filePath}`)
         process.exit(1)
     }
 
     const isDirectory = stats.isDirectory()
     const fileType = isDirectory ? 'd' : 'f'
-    const fileSize = stats.size
+    const fileSize = stats.size.toString()
     const fileModified = stats.mtime.toLocaleString()
 
-    return `${fileType} ${file.padEnd(20)} ${fileSize.toString().padStart(10)} ${fileModified}`
+    return `${fileType} ${file.padEnd(20)} ${fileSize.padStart(10)} ${fileModified}`
 })
 
-const filesInfo = await promise.all(filesPromises)
+const filesInfo = await Promise.all(filesPromises)
 
 filesInfo.forEach(fileInfo => console.log(fileInfo))
 }
