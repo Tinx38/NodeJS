@@ -1,4 +1,3 @@
-
 const path = require('node:path')
 
 // barra separadora de capetas
@@ -16,4 +15,3 @@ console.log(filename)
 
 const extension = path.extname('my.super.image.jpg')
 console.log(extension)
-

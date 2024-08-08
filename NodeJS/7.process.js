@@ -8,10 +8,10 @@
 
 // poder controlar eventos del proceso
 // process.on('exit', () => {
-    // limpiar los recursos
+// limpiar los recursos
 // })
 
-// current working directory 
+// current working directory
 console.log(process.cwd())
 
 // platform

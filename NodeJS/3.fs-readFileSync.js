@@ -11,4 +11,3 @@ console.log('haciendo otras cosas mientras lee el archivo...')
 console.log('leyendo segundo archivo...')
 const secondText = fs.readFileSync('archivo2.txt', 'utf-8')
 console.log('segundo texto:', secondText)
-

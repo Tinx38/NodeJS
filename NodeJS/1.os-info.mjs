@@ -1,5 +1,4 @@
-
-import { platform, release, arch, cpus, freemem, totalmem } from 'node:os';
+import { platform, release, arch, cpus, freemem, totalmem } from 'node:os'
 
 console.log('informacion del sistema operativo:')
 console.log('________________________________')
